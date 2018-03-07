@@ -1,5 +1,5 @@
 print("====INBOX====")
-print("Version: 1.6 - The Login")
+print("Version: 1.6")
 import socket
 
 def acceptConnection(serversocket):
