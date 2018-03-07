@@ -1,7 +1,6 @@
 print("====INBOX====")
 print("Version: 1.5 - The Login")
 import socket
-inboxPort = 5996
 
 def acceptConnection(serversocket):
         connection, address = serversocket.accept()
@@ -14,9 +13,15 @@ def declareServerSocket(inboxPort):
         serversocket.bind(("",inboxPort))
         serversocket.listen(5)
         return serversocket
-        
+
+
+inboxPort=""
+while type(inboxPort)!=int:
+    inboxPort=input("Inbox Port: ")
+    try:
+        inboxPort=int(inboxPort)
+    except ValueError:
+        print("This should be a number.")
 serversocket=declareServerSocket(inboxPort)      
 while True:
         acceptConnection(serversocket)
-
-   
